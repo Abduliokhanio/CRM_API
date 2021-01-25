@@ -10,3 +10,6 @@
 User.create(name: 'Luke')
 
 Lead.create(name: 'icode', user_id:1)
+Lead.create(name: 'Schlum', user_id:1)
+Lead.create(name: 'Mattress', user_id:1)
+Lead.create(name: 'Gartner', user_id:1)
