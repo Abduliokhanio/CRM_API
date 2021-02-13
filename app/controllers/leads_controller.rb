@@ -3,7 +3,7 @@ class LeadsController < ApplicationController
 
   # GET /leads
   def index
-    @leads = Lead.all
+    @leads = Lead.all.reverse
 
     render json: @leads
   end
