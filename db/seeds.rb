@@ -13,3 +13,7 @@ Lead.create(name: 'icode', user_id:1)
 Lead.create(name: 'Schlum', user_id:1)
 Lead.create(name: 'Mattress', user_id:1)
 Lead.create(name: 'Gartner', user_id:1)
+
+Note.create(description: "Some bs here 1", lead_id:1, user_id:1)
+Note.create(description: "Some bs here 2", lead_id:2, user_id:1)
+Note.create(description: "Some bs here 3", lead_id:1, user_id:1)
