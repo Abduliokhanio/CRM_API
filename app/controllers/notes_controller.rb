@@ -3,10 +3,13 @@ class NotesController < ApplicationController
 
   # GET /notes
   def index
+    # need to add filter here to only return all the 
+    # notes that belong to a particlar lead
+    
     @notes = Note.all
-
     render json: @notes
   end
+
 
   # GET /notes/1
   def show
