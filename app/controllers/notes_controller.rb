@@ -5,8 +5,10 @@ class NotesController < ApplicationController
   def index
     # need to add filter here to only return all the 
     # notes that belong to a particlar lead
-    
-    @notes = Note.all
+  
+
+    @notes = Note.where(["lead_id = #{request.original_url.split("")[-7]}"])
+
     render json: @notes
   end
 
