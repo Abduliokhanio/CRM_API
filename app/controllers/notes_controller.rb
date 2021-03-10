@@ -7,7 +7,7 @@ class NotesController < ApplicationController
     # notes that belong to a particlar lead
   
 
-    @notes = Note.where(["lead_id = #{request.original_url.split("")[-7]}"])
+    @notes = Note.where(["lead_id = #{request.original_url.split("")[-7]}"]).reverse
 
     render json: @notes
   end
