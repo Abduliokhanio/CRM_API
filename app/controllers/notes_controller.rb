@@ -6,8 +6,8 @@ class NotesController < ApplicationController
     # need to add filter here to only return all the 
     # notes that belong to a particlar lead
   
-
-    @notes = Note.where(["lead_id = #{request.original_url.split("")[-7]}"]).reverse
+    
+    @notes = Note.where(["lead_id = #{request.original_url.split("/")[4]}"]).reverse
 
     render json: @notes
   end
@@ -15,7 +15,13 @@ class NotesController < ApplicationController
 
   # GET /notes/1
   def show
-    render json: @note
+    
+    if @note.lead_id == request.original_url.split("/")[4].to_i
+      render json: @note
+    else
+      @note = {}
+      render json: @note
+    end
   end
 
   # POST /notes
