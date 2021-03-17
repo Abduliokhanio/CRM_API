@@ -5,7 +5,6 @@ class NotesController < ApplicationController
   def index
     # need to add filter here to only return all the 
     # notes that belong to a particlar lead
-  
     
     @notes = Note.where(["lead_id = #{request.original_url.split("/")[4]}"]).reverse
 
@@ -27,8 +26,9 @@ class NotesController < ApplicationController
   # POST /notes
   def create
     @note = Note.new(note_params)
-
+    
     if @note.save
+      
       render json: @note, status: :created, location: @note
     else
       render json: @note.errors, status: :unprocessable_entity

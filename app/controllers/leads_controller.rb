@@ -16,7 +16,7 @@ class LeadsController < ApplicationController
   # POST /leads
   def create
     @lead = Lead.new(lead_params)
-
+    
     if @lead.save
       render json: @lead, status: :created, location: @lead
     else
